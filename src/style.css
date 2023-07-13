@@ -38,6 +38,7 @@ button {
 	background: none;
 	color: inherit;
 	padding: 0;
+	cursor: pointer;
 }
 
 button {
@@ -49,5 +50,85 @@ a {
 	text-decoration: none;
 	&:hover {
 		text-decoration: underline;
+	}
+}
+
+/* styles */
+main.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	& form {
+		min-width: 300px;
+		max-width: 400px;
+		border: var(--border);
+		border-radius: var(--border-radius);
+		padding: 1rem;
+		& .password-placeholder-wrapper {
+			display: flex;
+			align-items: center;
+			position: relative;
+			& #password-placeholder {
+				background: #000;
+				padding: 1rem;
+				width: 100%;
+				border-radius: var(--border-radius);
+			}
+			& #copy-btn {
+				position: absolute;
+				width: auto;
+				height: 100%;
+				right: 0;
+				padding: 0.5rem;
+				border-left: 1px solid #333;
+			}
+		}
+		& .range-input-wrapper {
+			padding: 1rem;
+			& #character-number {
+				width: 100%;
+			}
+		}
+		& .flex-wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 5rem;
+
+			& .options-wrapper {
+				display: flex;
+				align-items: flex-start;
+				flex-direction: column;
+				gap: 0.5rem;
+
+				& .options-label {
+					cursor: pointer;
+					& .options {
+						display: none;
+					}
+					& .options:checked + span {
+						color: var(--color-primary);
+					}
+				}
+			}
+
+			& #submit-btn {
+				background: var(--color-secondary);
+				color: var(--color-text-dark);
+				padding: 1rem;
+				border-radius: var(--border-radius);
+				outline-width: var(--border-width);
+				outline-style: var(--border-style);
+				outline-color: var(--color-secondary);
+				outline-offset: -2px;
+				transition: outline-offset 100ms linear;
+
+				&:hover,
+				&:focus-visible {
+					outline-offset: 2px;
+				}
+			}
+		}
 	}
 }
