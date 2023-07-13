@@ -1,3 +1,20 @@
+/* variables */
+:root {
+	--text-color-light: #fff;
+	--text-color-dark: #111;
+	--color-bg: #111;
+	--color-primary: #00c6cf;
+	--color-secondary: #d3fbd8;
+	--bg-body: var(--color-bg);
+	--bg-button: var(--color-secondary);
+	--border-radius: 10px;
+	--border-width: 2px;
+	--border-style: solid;
+	--border-color: var(--color-primary);
+	--border: var(--border-width) var(--border-style) var(--border-color);
+}
+
+/* resets */
 *,
 *::after,
 *::before {
