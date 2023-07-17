@@ -18,3 +18,13 @@ formEl.addEventListener('submit', (e) => {
     symbols: specialEl.checked
   })
 })
+
+function alertCopy(pop: boolean) {
+  alert(pop ? "text copied to clipboard" : "generate password first")
+}
+
+clipboardEl.addEventListener("click", () => {
+  if (!resultEl.value) return alertCopy(false)
+  navigator.clipboard.writeText(resultEl.value)
+  return alertCopy(true)
+})
