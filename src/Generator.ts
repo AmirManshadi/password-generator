@@ -1,19 +1,19 @@
 class Generator {
-	static getRandomLower(): string {
+	private static getRandomLower(): string {
 		return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
 	}
-	static getRandomUpper(): string {
+	private static getRandomUpper(): string {
 		return String.fromCharCode(Math.floor(Math.random() * 26) + 65)
 	}
-	static getRandomNumber(): string {
+	private static getRandomNumber(): string {
 		return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
 	}
-	static getRandomSymbol(): string {
+	private static getRandomSymbol(): string {
 		const symbols = "!@#$%^&*()<>?/~-_"
 		return symbols[Math.floor(Math.random() * symbols.length)]
 	}
 
-	static getNecessaryFunctions(options: Generator.optionsProps): (() => string)[] {
+	private static getNecessaryFunctions(options: Generator.optionsProps): (() => string)[] {
     let arr = [this.getRandomLower]
     if(options.upperCase) arr.push(this.getRandomUpper)
     if(options.numbers) arr.push(this.getRandomNumber)
