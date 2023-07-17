@@ -21,7 +21,7 @@ class Generator {
 		return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
 	}
 	static getRandomSymbol(): string {
-		const symbols = "!@#$%^&*()<>?/~"
+		const symbols = "!@#$%^&*()<>?/~-_"
 		return symbols[Math.floor(Math.random() * symbols.length)]
 	}
 
@@ -37,7 +37,7 @@ class Generator {
     let str: string = ''
     const functions: (() => string)[] = this.getNecessaryFunctions(options)
     for (let i = 0; i < len; i++) {
-      str += functions[Math.floor(Math.random() * (functions.length - 1))]()
+      str += functions[Math.floor(Math.random() * functions.length)]()
     }
     return str
   }
